@@ -2,7 +2,6 @@ require "test_helper"
 
 class ArticlesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    
     Article.delete_all
 
     @article1 = Article.create!(title: "Ruby on Rails", author: "David", content: "Rails is awesome!", publish_date: "2024-11-01")
@@ -11,7 +10,6 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should search and return matching articles" do
-    
     get articles_url, params: { search: "Ruby" }
     assert_response :success
 
@@ -22,7 +20,6 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should return all articles when search is empty" do
-    
     get articles_url, params: { search: "" }
     assert_response :success
 
@@ -36,7 +33,6 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should return no articles for unmatched search" do
-    
     get articles_url, params: { search: "NonExistent" }
     assert_response :success
 

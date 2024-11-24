@@ -1,6 +1,6 @@
 source "https://rubygems.org"
-gem 'faker', '~> 2.21'
-gem 'rack-cors'
+gem "faker", "~> 2.21"
+gem "rack-cors"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.0"
 # Use sqlite3 as the database for Active Record
@@ -46,5 +46,3 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 end
-
-

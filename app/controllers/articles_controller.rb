@@ -3,18 +3,18 @@ class ArticlesController < ApplicationController
 
   def index
     if params[:search].present?
-      
+
       search_service = Articles::Search.new(params[:search])
       @articles = search_service.perform
     else
-      
+
       @articles = Article.all
     end
-  
+
     @decorated_articles = @articles.map { |article| ArticleDecorator.new(article).decorated_article }
-  
+
     render json: @decorated_articles
-  end  
+  end
 
   def show
     decorated_article = ArticleDecorator.new(@article).decorated_article

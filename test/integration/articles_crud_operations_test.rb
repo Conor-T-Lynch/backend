@@ -2,7 +2,6 @@ require "test_helper"
 
 class ArticlesIntegrationTest < ActionDispatch::IntegrationTest
   test "should create, read, update, and delete an article" do
-    
     post articles_url, params: {
       article: {
         title: "Integration Testing",
