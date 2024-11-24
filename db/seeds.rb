@@ -1,0 +1,38 @@
+articles = [
+  { title: "Breaking News: Major Earthquake Hits California", author: "John Doe", content: "A massive earthquake measuring 7.8 on the Richter scale has struck Southern California. Rescue teams are currently being deployed to affected areas.", publish_date: "2024-11-23T08:00:00Z" },
+  { title: "Tech Giant Announces Groundbreaking AI Innovation", author: "Jane Smith", content: "In a press conference this morning, TechCorp unveiled a new AI that promises to revolutionize the way we interact with technology.", publish_date: "2024-11-23T07:30:00Z" },
+  { title: "Breaking: Severe Weather Warning in the Midwest", author: "Emily Clark", content: "A severe weather warning has been issued for the Midwest, with tornadoes expected to touch down later this afternoon.", publish_date: "2024-11-23T07:45:00Z" },
+  { title: "New Lawsuit Could Change Social Media Regulations", author: "David Miller", content: "A new lawsuit filed against several social media companies could reshape the way content is moderated online.", publish_date: "2024-11-23T06:50:00Z" },
+  { title: "US Economy Shows Signs of Strong Recovery", author: "Sarah White", content: "Experts are optimistic as the US economy shows strong recovery signs following a period of stagnation.", publish_date: "2024-11-22T15:00:00Z" },
+  { title: "World Leaders Meet to Discuss Climate Change Action", author: "Mark Thompson", content: "A global summit has begun in Paris, with world leaders gathering to discuss urgent climate action strategies.", publish_date: "2024-11-22T14:30:00Z" },
+  { title: "New Virus Strain Discovered in Europe", author: "Linda Johnson", content: "A new strain of virus has been detected in Europe, causing widespread concern among health officials.", publish_date: "2024-11-22T14:00:00Z" },
+  { title: "NASA Announces New Mars Mission", author: "Alice King", content: "NASA has announced plans to send another rover to Mars in 2025, aiming to gather more data on the planet's surface.", publish_date: "2024-11-22T13:45:00Z" },
+  { title: "Hollywood Actor Announces Retirement After 30 Years", author: "James Harris", content: "Famous actor Mark Rogers has announced his retirement after a celebrated 30-year career in Hollywood.", publish_date: "2024-11-22T13:30:00Z" },
+  { title: "Political Scandal Shakes the Government", author: "Rachel Green", content: "A new political scandal has surfaced involving top government officials, shaking public trust.", publish_date: "2024-11-22T13:00:00Z" },
+  { title: "Global Stock Markets Surge Amid Optimism", author: "Thomas Lee", content: "Global stock markets saw a sharp rise today, fueled by optimism about economic growth and new government policies.", publish_date: "2024-11-22T12:30:00Z" },
+  { title: "Large-Scale Cyberattack Targets Financial Institutions", author: "David Jones", content: "Several major financial institutions have been targeted by a large-scale cyberattack, disrupting online banking services.", publish_date: "2024-11-22T12:00:00Z" },
+  { title: "Scientists Warn of Deforestation's Impact on Biodiversity", author: "Nancy Adams", content: "A new study warns that the rapid deforestation of rainforests is causing irreparable damage to global biodiversity.", publish_date: "2024-11-22T11:45:00Z" },
+  { title: "Major Airline Cancels Hundreds of Flights Due to Technical Issues", author: "Kevin Brown", content: "Passengers are facing long delays and cancellations as a major airline struggles with technical issues affecting hundreds of flights.", publish_date: "2024-11-22T11:30:00Z" },
+  { title: "New Law Makes Cyberbullying a Criminal Offense", author: "Laura Harris", content: "A new law passed today makes cyberbullying a criminal offense, aiming to protect individuals from online harassment.", publish_date: "2024-11-22T11:00:00Z" },
+  { title: "Breakthrough in Renewable Energy Technology Announced", author: "Chris Miller", content: "Scientists have announced a breakthrough in renewable energy technology that could significantly reduce reliance on fossil fuels.", publish_date: "2024-11-22T10:30:00Z" },
+  { title: "High-Profile Celebrity Wedding Stuns Fans", author: "Olivia Black", content: "The wedding of celebrity couple Jordan and Emily took the world by surprise, with a lavish ceremony and unexpected guest appearances.", publish_date: "2024-11-22T10:00:00Z" },
+  { title: "Global Hunger Crisis Escalates as Food Prices Soar", author: "Sophia Davis", content: "Experts warn that the global hunger crisis is worsening as food prices continue to rise, leaving millions at risk of malnutrition.", publish_date: "2024-11-22T09:45:00Z" },
+  { title: "New Breakthrough in Cancer Treatment Promises Hope", author: "John Black", content: "A new treatment for cancer has shown promise in early trials, offering hope to millions of patients around the world.", publish_date: "2024-11-22T09:30:00Z" },
+  { title: "Public Protests Erupt Over Police Brutality", author: "Hannah White", content: "Protests have erupted in major cities across the country, calling for justice and accountability in the wake of police brutality incidents.", publish_date: "2024-11-22T09:00:00Z" },
+  { title: "New Technology Could Revolutionize Electric Cars", author: "Mark Peterson", content: "A new battery technology could revolutionize the electric car industry, offering longer ranges and shorter charging times.", publish_date: "2024-11-22T08:30:00Z" },
+  { title: "Record-Breaking Heatwave Hits Australia", author: "Charlotte Allen", content: "Australia is experiencing a record-breaking heatwave, with temperatures soaring above 40°C in several cities.", publish_date: "2024-11-22T08:00:00Z" },
+  { title: "National Sports Team Wins Major Championship", author: "Ryan Lewis", content: "The national football team has won the international championship, bringing home the gold after a thrilling final match.", publish_date: "2024-11-22T07:30:00Z" },
+  { title: "Celebrity Chef Opens New Restaurant in New York", author: "Paul Walker", content: "Celebrity chef Giovanni has opened a new high-end restaurant in New York, offering a unique fusion of Italian and Asian cuisines.", publish_date: "2024-11-22T07:00:00Z" },
+  { title: "Scientists Discover New Species in the Amazon", author: "Megan Scott", content: "A team of scientists has discovered a new species of amphibian in the Amazon rainforest, shedding light on the region's biodiversity.", publish_date: "2024-11-22T06:30:00Z" },
+  { title: "Robotic Surgery Technology Revolutionizes Healthcare", author: "Brian Lee", content: "New advancements in robotic surgery are transforming the healthcare industry, offering precise and minimally invasive procedures.", publish_date: "2024-11-22T06:00:00Z" },
+  { title: "National Park to Undergo Major Renovations", author: "Eva Turner", content: "The National Park Service has announced plans for major renovations in several national parks to improve accessibility and environmental preservation.", publish_date: "2024-11-22T05:30:00Z" },
+  { title: "Global Tech Conference Kicks Off in Silicon Valley", author: "Jack Rogers", content: "The highly anticipated Global Tech Conference has begun in Silicon Valley, with companies unveiling cutting-edge innovations.", publish_date: "2024-11-22T05:00:00Z" },
+  { title: "Military Coup Overthrows Government", author: "Luis Perez", content: "A military coup in the country of Yelvia has overthrown the government, sparking concerns about stability and international relations.", publish_date: "2024-11-22T04:30:00Z" }
+]
+
+articles.each_with_index do |article, index|
+  Article.create!(article)
+  puts "Seeded article ##{index + 1}: #{article[:title]}"
+end
+
+puts "#{articles.length} articles have been successfully seeded!"
