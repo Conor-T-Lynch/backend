@@ -19,15 +19,21 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
-      # Ensure the bin scripts are executable
+      
       - name: Set executable permissions on bin scripts
         run: chmod +x bin/*
+
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install
 
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
 
   lint:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -38,9 +44,14 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
-      # Ensure the bin scripts are executable
+      
       - name: Set executable permissions on bin scripts
         run: chmod +x bin/*
+
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install
 
       - name: Lint code for consistent style
         run: bin/rubocop -f github
@@ -48,7 +59,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    
+
     steps:
       - name: Install packages
         run: sudo apt-get update && sudo apt-get install --no-install-recommends -y google-chrome-stable curl libjemalloc2 libvips sqlite3
@@ -62,12 +73,19 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
-      # Ensure the bin scripts are executable
+      
       - name: Set executable permissions on bin scripts
         run: chmod +x bin/*
+
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install
+
+      - name: Prepare database
+        run: bin/rails db:create db:schema:load
 
       - name: Run tests
         env:
           RAILS_ENV: test
-
-        run: bin/rails db:test:prepare test
+        run: bin/rails test
