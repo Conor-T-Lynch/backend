@@ -1,5 +1,5 @@
 name: Deploy to EC2
-
+#makes a push on the main branch.
 on:
   push:
     branches:
