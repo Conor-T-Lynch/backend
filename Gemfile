@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-gem "faker", "~> 2.21"
+gem "faker", "~> 3.5"
 gem "rack-cors", require: "rack/cors"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.0"
