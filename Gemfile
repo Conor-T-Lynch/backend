@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 gem "faker", "~> 2.21"
-gem "rack-cors"
+gem 'rack-cors', require: 'rack/cors'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.0"
 # Use sqlite3 as the database for Active Record
