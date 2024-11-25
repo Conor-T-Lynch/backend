@@ -3,27 +3,24 @@ name: Deploy to EC2
 on:
   push:
     branches:
-      - main
+      - main  # Trigger on pushes to the main branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the latest code
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Step 2: Set up SSH
       - name: Set up SSH
         uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
 
+      # Step 3: Execute the deployment script on the EC2 instance
       - name: Deploy to EC2
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@<EC2_PUBLIC_IP> << 'EOF'
-          # Navigate to the project directory
-          cd /home/ubuntu/NewsArticleSystem
-
-          # Pull the latest changes from GitHub
-          git pull origin main
-          EOF
+          ssh -o StrictHostKeyChecking=no ubuntu@34.236.62.61 "/home/ubuntu/deploy.sh"
