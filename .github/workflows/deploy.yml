@@ -23,4 +23,4 @@ jobs:
       # Step 3: Execute the deployment script on the EC2 instance
       - name: Deploy to EC2
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@34.236.62.61 "/home/ubuntu/deploy.sh"
+          ssh -o StrictHostKeyChecking=no ubuntu@54.159.197.217 "/home/ubuntu/deploy.sh"
