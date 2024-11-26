@@ -14,13 +14,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-        #Setting up the SSH agent
+        #Setting up the SSH agent.
       - name: Set up SSH
         uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
 
-      
+        #Deploys updated code to the EC2 instance.
       - name: Deploy to EC2
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@34.193.120.111 "/home/ubuntu/deploy.sh"
