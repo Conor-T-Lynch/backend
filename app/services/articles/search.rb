@@ -6,7 +6,7 @@ module Articles
 
     def perform
       if @query.present?
-
+        #
         Article.where("title LIKE ? OR content LIKE ? OR author LIKE ?", "%#{@query}%", "%#{@query}%", "%#{@query}%")
       else
         Article.all
