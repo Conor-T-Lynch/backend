@@ -1,5 +1,5 @@
 name: CI
-# Triggers the workflow on a pull or push request
+#Triggers the workflow on a pull or push request
 on:
   pull_request:
   push:
