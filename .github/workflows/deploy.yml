@@ -4,14 +4,16 @@ on:
   push:
     branches:
       - main
-
+#Defines the jobs that are to be executed
 jobs:
   deploy:
+    #Runs on the latest ubuntu version
     runs-on: ubuntu-latest
 
     steps:
-      
+        #Step to checkout the repository
       - name: Checkout code
+        #Github action to checkout the code
         uses: actions/checkout@v3
 
         #Setting up the SSH agent.

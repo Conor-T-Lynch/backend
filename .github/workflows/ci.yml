@@ -1,91 +1,116 @@
 name: CI
-
+# Triggers the workflow on a pull or push request
 on:
   pull_request:
   push:
     branches: [ main ]
-
+#Defines the jobs that are to be executed
 jobs:
+  #Scans ruby vulnerabilities
   scan_ruby:
+    #Runs on the latest ubuntu version
     runs-on: ubuntu-latest
-
+    #Steps to be executed 
     steps:
+        #Step to checkout the repository
       - name: Checkout code
+        #Github action to checkout the code
         uses: actions/checkout@v4
-
+        #sets up the ruby environment
       - name: Set up Ruby
+        #Action to configure ruby
         uses: ruby/setup-ruby@v1
         with:
+          #Specifies the ruby version to be used
           ruby-version: .ruby-version
+          #enables caching for bundler
           bundler-cache: true
 
-      
+        #makes the scripts executable
       - name: Set executable permissions on bin scripts
+        #Modify permissions of all scripts in the bin folder
         run: chmod +x bin/*
-
+        #Install ruby dependencies
       - name: Install dependencies
         run: |
           gem install bundler
           bundle install
 
       - name: Scan for common Rails security vulnerabilities using static analysis
+        #Runs brakeman analysis tool
         run: bin/brakeman --no-pager
-
+  #Job for linting ruby code
   lint:
+    #Runs on the latest ubuntu version
     runs-on: ubuntu-latest
-
+    #Steps for linting
     steps:
+        #Step to checkout the repository
       - name: Checkout code
+        #Github action to checkout the code
         uses: actions/checkout@v4
-
+        #sets up the ruby environment
       - name: Set up Ruby
+        #Action to configure ruby
         uses: ruby/setup-ruby@v1
         with:
+          #Specifies the ruby version to be used
           ruby-version: .ruby-version
+          #enables caching for bundler
           bundler-cache: true
 
-      
+        #makes the scripts executable
       - name: Set executable permissions on bin scripts
+        #Modify permissions of all scripts in the bin folder
         run: chmod +x bin/*
-
+        #Install ruby dependencies
       - name: Install dependencies
         run: |
           gem install bundler
           bundle install
-
+        #Useing rubocop to check code style
       - name: Lint code for consistent style
+        #Run rubocop with Github formatting
         run: bin/rubocop -f github
-
+  #Job for running tests
   test:
+    #Runs on the latest ubuntu version
     runs-on: ubuntu-latest
 
-
+    #Steps for running tests
     steps:
+        #Installs packages
       - name: Install packages
         run: sudo apt-get update && sudo apt-get install --no-install-recommends -y google-chrome-stable curl libjemalloc2 libvips sqlite3
-
+        #Step to checkout the repository
       - name: Checkout code
+        #Github action to checkout the code
         uses: actions/checkout@v4
-
+        #sets up the ruby environment
       - name: Set up Ruby
+        #Action to configure ruby
         uses: ruby/setup-ruby@v1
         with:
+          #Specifies the ruby version to be used
           ruby-version: .ruby-version
           bundler-cache: true
 
-      
+        #makes the scripts executable
       - name: Set executable permissions on bin scripts
+        #Modify permissions of all scripts in the bin folder
         run: chmod +x bin/*
-
+        #Install ruby dependencies
       - name: Install dependencies
         run: |
           gem install bundler
           bundle install
-
+        #Setting up the test database
       - name: Prepare database
         run: bin/rails db:create db:schema:load
-
+        #Executes rails tests
       - name: Run tests
         env:
+          #Sets the rails environment to test
           RAILS_ENV: test
+          #Run rails test
         run: bin/rails test
