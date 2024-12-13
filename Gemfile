@@ -2,7 +2,7 @@ source "https://rubygems.org"
 gem "faker", "~> 2.21"
 gem "rack-cors", require: "rack/cors"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 8.0.0"
+gem "rails", "~> 8.0.1"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", ">= 2.1"
 # Use the Puma web server [https://github.com/puma/puma]
